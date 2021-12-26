@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    {% block title %} {% endblock %}
+    <meta charset="UTF-8">
+    <!--  css link  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <!--  bootstrap4 link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css"/>
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <a style="text-decoration: none" href="/">
+            <div class="logo_name">Lavender</div>
+        </a>
+        <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="/">
+                <i class='bx bx-devices'></i>
+                <span class="links_name">Mobile List</span>
+            </a>
+            <span class="tooltip">Mobile List</span>
+        </li>
+        <li>
+            <a href="/addMobile">
+                <i class='bx bxs-add-to-queue'></i>
+                <span class="links_name">Add Mobile</span>
+            </a>
+            <span class="tooltip">Add Mobile</span>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    {% block body %}
+    {% endblock %}
+</section>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+
+</body>
+</html>

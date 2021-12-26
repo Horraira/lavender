@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} <title>Details Info</title> {% endblock %}
+{% block body %}
+<div class="text">Mobile Details</div>
+
+<div class="mobileForm">
+    <div class="form">
+        <div class="image">
+            <img style="max-width: 250px; margin-bottom: 2rem" src="{{ mobile.image.url }}" alt="">
+        </div>
+        Brand Name = {{ mobile.brandName }} <br><br>
+        Model Name = {{ mobile.modelName }} <br><br>
+        JAN Code = {{ mobile.janCode }} <br><br>
+        Color = {{ mobile.color }}
+    </div>
+</div>
+{% endblock %}

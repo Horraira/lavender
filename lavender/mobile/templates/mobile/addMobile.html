@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} <title>Add Mobile</title> {% endblock %}
+{% block body %}
+<div class="text">Add Mobile</div>
+<div class="mobileForm">
+    <div class="form">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Mobile Information</h2> <br><br>
+            Brand Name : {{ form.brandName }} <br> <br>
+            Model Name : {{ form.modelName }} <br> <br>
+            JAN Code : {{ form.janCode }} <br> <br>
+            Color : {{ form.color }} <br> <br>
+            Image : {{ form.image }} <br><br>
+
+            <h5 style="list-style: none; color: red">{{ form.errors }}</h5>
+
+            <input class="btn btn-primary" type="submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
