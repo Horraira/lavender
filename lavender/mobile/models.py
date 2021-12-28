@@ -12,7 +12,7 @@ class Mobile(models.Model):
     image = models.ImageField(upload_to='Mobile', null=True, blank=True, default='mobile.png')
 
     def __str__(self):
-        return self.mobileName
+        return self.modelName
 
     def get_absolute_url(self):
         return reverse('Mobile List')

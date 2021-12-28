@@ -25,7 +25,10 @@
     <ul class="nav-list">
         <li>
             <i class='bx bx-search'></i>
-            <input type="text" placeholder="Search...">
+            <form id="search-form" action="">
+                {% csrf_token %}
+                <input id="search-input" type="text" placeholder="Search...">
+            </form>
             <span class="tooltip">Search</span>
         </li>
         <li>
@@ -54,6 +57,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/search.js' %}"></script>
 
 </body>
 </html>

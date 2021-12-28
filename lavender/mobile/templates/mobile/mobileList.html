@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         {% for mobile in mobiles %}
-        <tr>
+        <tr id="results-row">
             <td><img style="width: 50px" src="{{ mobile.image.url }}" alt=""> </td>
             <td> {{ mobile.brandName }}</td>
             <td> {{ mobile.modelName }}</td>
