@@ -19,11 +19,30 @@ def is_ajax(request):
 
 def searchResults(request):
     if is_ajax(request=request):
+        res = None
         mobile = request.POST.get('mobile')
         qs = Mobile.objects.filter(modelName__icontains=mobile)
-        print(qs)
-        return JsonResponse({'data': mobile})
+        if len(qs) > 0 and len(mobile) > 0:
+            data = []
+            for foo in qs:
+                item = {
+                    'pk' : foo.pk,
+                    'brandName': foo.brandName,
+                    'modelName': foo.modelName,
+                    'color': foo.color,
+                    'janCode': foo.janCode,
+                    'image': str(foo.image.url)
+                }
+                data.append(item)
+            res = data
+        else:
+            pass
+        return JsonResponse({'data': res})
     return JsonResponse({})
+
+
+def ajaxSearch(request):
+    return render(request, 'mobile/ajaxSearch.html')
 
 
 class MobileDetails(DetailView):
