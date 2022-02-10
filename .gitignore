@@ -12,3 +12,4 @@ src/*/package.lock
 Pipfile.lock
 node_modules
 package-lock.json
+images/Mobile
